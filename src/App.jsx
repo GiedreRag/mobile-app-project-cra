@@ -3,8 +3,11 @@ import style from './App.module.css';
 function App() {
   return (
     <div className={style.app}>
-      <img className={style.logoImg} src='./img/logo.png' alt='logo' />
-      <button className={style.button}>Get started</button>
+      <div className={style.homePage}>
+        <img className={style.homeLogoImg} src='./img/logo.png' alt='logo' />
+        <h1 className={style.homeTitle}>Want to enjoy shopping?</h1>
+        <button className={style.button} href="#">Get started</button>
+      </div>
     </div>
   );
 }
