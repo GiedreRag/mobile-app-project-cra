@@ -1,5 +1,13 @@
 .app {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 2rem 4rem;
+    text-align: center;
+    padding: 3rem 4rem;
+    gap: 2rem;
+}
+
+.mainTitle {
+    color: #6a609e;
+    text-transform: capitalize;
 }
