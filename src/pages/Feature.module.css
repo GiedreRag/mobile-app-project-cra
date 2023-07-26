@@ -1,3 +1,8 @@
+/* .featurePages {
+    display: flex;
+    flex-direction: column;
+}
+
 .featurePages {
     margin-top: 7rem;
 }
@@ -12,4 +17,4 @@
 
 .roundDots {
     margin-bottom: 3rem;
-}
+} */
