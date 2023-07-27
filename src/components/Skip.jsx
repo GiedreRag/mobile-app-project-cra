@@ -4,7 +4,7 @@ import style from '../pages/features/Feature.module.css';
 export function Skip() {
     return (
         <div className={style.skip}>
-            <Link className={style.link} to='/'>Skip</Link>
+            <Link className={style.link} to='/register'>Skip</Link>
         </div>
     );
 }

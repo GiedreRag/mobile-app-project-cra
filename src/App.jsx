@@ -5,6 +5,7 @@ import { Feature1 } from './pages/features/Feature1';
 import { Feature2 } from './pages/features/Feature2';
 import { Feature3 } from './pages/features/Feature3';
 import { Page404 } from "./pages/Page404";
+import { Register } from "./pages/Register";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/feature/1' element={<Feature1 />} />
             <Route path='/feature/2' element={<Feature2 />}/>
             <Route path='/feature/3' element={<Feature3 />}/>
+            <Route path='/register' element={<Register />}/>
             <Route path='*' element={<Page404 />}/>
           </Route>
         </Routes>

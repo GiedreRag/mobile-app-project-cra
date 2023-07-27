@@ -15,7 +15,7 @@ export function Feature3() {
                 <h1 className={style.title}>Yes!!!</h1>
                 <p className={style.text}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, assumenda!</p>
                 <ThreeDots />
-                <Link className={style3.button} to='/'>Register</Link>
+                <Link className={style3.button} to='/register'>Register</Link>
             </div>
         </div>
     );
