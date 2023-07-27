@@ -1,6 +1,6 @@
 import style from '../pages/Form.module.css';
 import style2 from '../components/Button.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 export function Register() {
@@ -9,6 +9,7 @@ export function Register() {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
     const [users, setUsers] = useState(() => JSON.parse(localStorage.getItem('users')) || []);
+    const navigate = useNavigate();
 
     function updateName(e) {
         setName(e.target.value);
@@ -33,7 +34,7 @@ export function Register() {
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
         e.preventDefault();
 
-        const newErrors = [];
+    const newErrors = [];
         if (name.length < minNameLength || name.length > maxNameLength) {
             newErrors.push('Not suitable username');
         }
@@ -50,10 +51,17 @@ export function Register() {
             newErrors.push('Password must contain at least one letter and one number');
         }
 
+        if (users.some((user) => user.email === email)) {
+            newErrors.push('Error with password or email');
+        }
+
         setErrors(newErrors);
 
         if (newErrors.length === 0) {
-            setUsers((prev) => [...prev, { name, email, password }]);
+            const newUser = { name, email, password };
+            setUsers((prev) => [...prev, newUser]);
+            localStorage.setItem('users', JSON.stringify([...users, newUser]));
+            navigate('/login');
         }
     }
 
@@ -81,10 +89,9 @@ export function Register() {
                     <input onChange={updatePassword} value={password} id='password' type="password" required />
                     <p className={style.passwordText}>Minimum 8 symbols: letters and numbers</p>
                 </div>
-
             </form>
             <button className={style2.button} onClick={registerUser}>Register</button>
-            <p className={style.logIn} >Have an account? <Link className={style.logInLink} to='/success'>Log in</Link></p>
+            <p className={style.formBottomText} >Have an account? <Link className={style.formBottomLink} to='/login'>Log in</Link></p>
         </>
     );
 }

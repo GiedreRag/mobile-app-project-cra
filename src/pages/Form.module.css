@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 2rem;
     font-size: 1rem;
+    margin-left: 1rem;
 }
 
 .form input {
@@ -36,15 +37,15 @@
     font-size: 0.7rem;
 }
 
-.logIn {
+.formBottomText {
     margin-top: 1.9rem;
 }
 
-.logInLink {
+.formBottomLink {
     text-decoration: none;
     color: #ea0e68;
 }
 
-.logInLink:hover {
+.fromBottomLink:hover {
     color: black;
 }
