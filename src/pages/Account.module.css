@@ -1,0 +1,6 @@
+.account {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding-top: 3rem;
+}
