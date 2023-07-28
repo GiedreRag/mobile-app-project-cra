@@ -7,6 +7,7 @@ export function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [termsChecked, setTermsChecked] = useState(false);
     const [errors, setErrors] = useState([]);
     const [users, setUsers] = useState(() => JSON.parse(localStorage.getItem('users')) || []);
     const navigate = useNavigate();
@@ -21,6 +22,10 @@ export function Register() {
 
     function updatePassword(e) {
         setPassword(e.target.value);
+    }
+    
+    function updateTermsChecked(e) {
+        setTermsChecked(e.target.checked);
     }
 
     function registerUser(e) {
@@ -53,6 +58,10 @@ export function Register() {
 
         if (users.some((user) => user.email === email)) {
             newErrors.push('Error with password or email');
+        }
+
+        if (!termsChecked) {
+            newErrors.push('You must accept the Terms and Conditions');
         }
 
         setErrors(newErrors);
@@ -88,6 +97,12 @@ export function Register() {
                     <label htmlFor="password">Password</label>
                     <input onChange={updatePassword} value={password} id='password' type="password" required />
                     <p className={style.passwordText}>Minimum 8 symbols: letters and numbers</p>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" checked={termsChecked} onChange={updateTermsChecked} />
+                        <Link className={style.termsText} to='/terms'>Accept Terms and Conditions</Link>
+                    </label>
                 </div>
             </form>
             <button className={style2.button} onClick={registerUser}>Register</button>

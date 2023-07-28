@@ -7,7 +7,8 @@ import { Feature3 } from './pages/features/Feature3';
 import { Page404 } from './pages/Page404';
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
-import { Account } from "./pages/Account";
+import { Account } from './pages/Account';
+import { TermsAndConditions } from './components/TermsAndConditions';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/feature/2' element={<Feature2 />}/>
             <Route path='/feature/3' element={<Feature3 />}/>
             <Route path='/register' element={<Register />}/>
+            <Route path='/terms' element={<TermsAndConditions />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/account' element={<Account />}/>
             <Route path='/logout' element={<Login />}/>

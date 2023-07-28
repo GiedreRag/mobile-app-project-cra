@@ -49,3 +49,11 @@
 .fromBottomLink:hover {
     color: black;
 }
+
+.termsText {
+    color: #000;
+}
+
+.termsText:hover {
+    color: #ea0e68;
+}
