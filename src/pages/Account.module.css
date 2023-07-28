@@ -1,8 +1,7 @@
 .account {
     display: flex;
     flex-direction: column;
-    gap: 3em;
-    padding-top: 3rem;
+    padding-top: 1rem;
 }
 
 .burger {
@@ -10,4 +9,23 @@
     cursor: pointer;
     margin-left: 15rem;
     margin-top: -1.5rem;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.contentsTitle {
+    color: #ea0e68;
+}
+
+.contentImg {
+    height: 5rem;
+}
+
+.contents a {
+    color: black;
 }
