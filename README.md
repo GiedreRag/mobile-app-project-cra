@@ -26,6 +26,7 @@ Site published at: https://giedrerag.github.io/mobile-app-project-cra/
 - active login form
 - form validations
 - account page with active burger menu
+- burger menu with active 'logout'
 - account page with generated content + active links to product's website
 - different pages and navigation between them
 - localStorage
