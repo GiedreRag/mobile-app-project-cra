@@ -22,6 +22,7 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/account' element={<Account />}/>
+            <Route path='/logout' element={<Login />}/>
             <Route path='*' element={<Page404 />}/>
           </Route>
         </Routes>
