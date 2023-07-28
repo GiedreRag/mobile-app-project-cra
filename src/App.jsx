@@ -17,9 +17,9 @@ function App() {
         <Routes>
           <Route >
             <Route path='/' index element={<Home />} />
-            <Route path='/feature/1' element={<Feature1 />} />
-            <Route path='/feature/2' element={<Feature2 />}/>
-            <Route path='/feature/3' element={<Feature3 />}/>
+            <Route path='/feature1' element={<Feature1 />} />
+            <Route path='/feature2' element={<Feature2 />}/>
+            <Route path='/feature3' element={<Feature3 />}/>
             <Route path='/register' element={<Register />}/>
             <Route path='/terms' element={<TermsAndConditions />}/>
             <Route path='/login' element={<Login />}/>

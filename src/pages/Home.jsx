@@ -9,7 +9,7 @@ export function Home() {
             <div className={style.homePage}>
                 <img className={style.logoImg} src={logo} alt='logo' />
                 <h1 className={style.title}>Want to enjoy shopping?</h1>
-                <Link className={style2.button} href="#" to="/feature/1">Get started!</Link>
+                <Link className={style2.button} href="#" to="/feature1">Get started!</Link>
             </div>
         </div>
     );
