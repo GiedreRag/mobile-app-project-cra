@@ -21,7 +21,7 @@ Site published at: https://giedrerag.github.io/mobile-app-project-cra/
 - Github pages
 - README / [markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - git branch
-- mobile app version desing
+- only mobile app version design (not responsive)
 - active register form
 - active login form
 - form validations
