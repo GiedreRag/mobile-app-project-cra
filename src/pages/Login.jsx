@@ -2,10 +2,12 @@ import style from '../pages/Form.module.css';
 import style2 from '../components/Button.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 export function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
@@ -42,8 +44,13 @@ export function Login() {
                     <input onChange={updateEmail} value={email} id='email' type="text" required />
                 </div>
                 <div className={style.formRows}>
-                    <label htmlFor="password">Password</label>
-                    <input onChange={updatePassword} value={password} id='password' type="password" required />
+                <label htmlFor="password">Password</label>
+                    <input onChange={updatePassword} value={password} id='password' type={showPassword ? 'text' : 'password'} required />
+                    {showPassword ? (
+                        <AiFillEye onClick={() => setShowPassword(false)} />
+                    ) : (
+                        <AiFillEyeInvisible onClick={() => setShowPassword(true)} />
+                    )}
                 </div>
             </form>
             <button className={style2.button} onClick={handleLogin}>Log in</button>

@@ -2,11 +2,13 @@ import style from '../pages/Form.module.css';
 import style2 from '../components/Button.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 export function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [termsChecked, setTermsChecked] = useState(false);
     const [errors, setErrors] = useState([]);
     const [users, setUsers] = useState(() => JSON.parse(localStorage.getItem('users')) || []);
@@ -95,7 +97,12 @@ export function Register() {
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input onChange={updatePassword} value={password} id='password' type="password" required />
+                    <input onChange={updatePassword} value={password} id='password' type={showPassword ? 'text' : 'password'} required />
+                    {showPassword ? (
+                        <AiFillEye onClick={() => setShowPassword(false)} />
+                    ) : (
+                        <AiFillEyeInvisible onClick={() => setShowPassword(true)} />
+                    )}
                     <p className={style.passwordText}>Minimum 8 symbols: letters and numbers</p>
                 </div>
                 <div>
