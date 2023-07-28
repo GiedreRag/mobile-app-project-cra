@@ -4,3 +4,10 @@
     gap: 3em;
     padding-top: 3rem;
 }
+
+.burger {
+    display: flex;
+    cursor: pointer;
+    margin-left: 15rem;
+    margin-top: -1.5rem;
+}
