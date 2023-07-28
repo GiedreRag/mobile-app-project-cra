@@ -25,9 +25,10 @@ Site published at: https://giedrerag.github.io/mobile-app-project-cra/
 - active register form
 - active login form
 - form validations
+- account page with active burger menu
+- account page with generated content + active links to product's website
 - different pages and navigation between them
 - localStorage
-- database usage
 - react icons
 
 ## 🎅 Authors
