@@ -13,21 +13,21 @@ export function Account() {
         {
             id: 1,
             title: 'New bag!',
-            img: '/img/bag.png',
+            img: 'bag.png',
             link: 'https://www.asos.com/kurt-geiger-london/kurt-geiger-london-kensington-cross-body-bag-with-chain-strap-in-green/prd/23443374?colourWayId=60483532&cid=8730'
         },
 
         {
             id: 2,
             title: 'Nr.1 dress!',
-            img: '/img/dress.png',
+            img: 'dress.png',
             link: 'https://www.asos.com/asos-luxe/asos-luxe-corsetted-frill-bandeau-corsage-sleeve-mini-dress-in-black/prd/204572485?colourWayId=204572487&cid=10860'
         },
 
         {
             id: 3,
             title: 'My favourite jeans!',
-            img: '/img/jeans.png',
+            img: 'jeans.png',
             link: 'https://www.asos.com/asos-petite/asos-design-petite-ultimate-skinny-jean-in-blue/prd/204905089?colourWayId=204905093&SearchQuery=jeans'
         },
     ]
@@ -39,13 +39,7 @@ export function Account() {
                 <h2>Welcome to your account, {user.name || 'User'}!</h2>
             </div>
             <div>
-            { dataContent.map(accountContentObj => (
-                <AccountContent 
-                    key={accountContentObj.id} 
-                    dataContent={accountContentObj} 
-                    imgPath={accountContentObj.img}
-                />
-                ))}
+            { dataContent.map(accountContentObj => <AccountContent key={accountContentObj.id} dataContent={accountContentObj}/>) }
             </div>              
             <div className={`${style.BurgerMenu} ${burgerMenuActive ? style.active : ''}`}></div>
         </>
