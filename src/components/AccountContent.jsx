@@ -1,7 +1,6 @@
 import style from '../pages/Account.module.css';
 
 export function AccountContent({dataContent: {title, img, link}}) {
-    console.log({img});
     return (
         <div className={style.contents}>
             <h3 className={style.contentsTitle}>{title}</h3>
