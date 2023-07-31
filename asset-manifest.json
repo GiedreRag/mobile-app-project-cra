@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mobile-app-project-cra/static/css/main.99c53178.css",
-    "main.js": "/mobile-app-project-cra/static/js/main.b1a1fd64.js",
+    "main.js": "/mobile-app-project-cra/static/js/main.af44cb4d.js",
     "index.html": "/mobile-app-project-cra/index.html",
     "main.99c53178.css.map": "/mobile-app-project-cra/static/css/main.99c53178.css.map",
-    "main.b1a1fd64.js.map": "/mobile-app-project-cra/static/js/main.b1a1fd64.js.map"
+    "main.af44cb4d.js.map": "/mobile-app-project-cra/static/js/main.af44cb4d.js.map"
   },
   "entrypoints": [
     "static/css/main.99c53178.css",
-    "static/js/main.b1a1fd64.js"
+    "static/js/main.af44cb4d.js"
   ]
 }
