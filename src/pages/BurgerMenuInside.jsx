@@ -9,7 +9,5 @@ export function BurgerMenuInside({ active }) {
             <Link className={style.burgerLink} to='/settings'>Settings</Link>
             <Link className={style.burgerLink} to='/logout'>Logout</Link>
         </div>
-    )
+    );
 }
-
-export default BurgerMenuInside;
