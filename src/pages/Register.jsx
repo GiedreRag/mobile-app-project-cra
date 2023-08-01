@@ -32,30 +32,40 @@ export function Register() {
 
     function registerUser(e) {
         const minNameLength = 2;
-        const maxNameLength = 20;
+        const maxNameLength = 30;
         const minEmailLength = 6;
-        const maxEmailLength = 30;
+        const maxEmailLength = 50;
+        const atSymbol = email.indexOf('@');
+        const dotSymbol = email.lastIndexOf('.');
+        const atSymbolCount = email.split('@').length - 1;
+        const topLevelDomain = email.slice(dotSymbol + 1);
         const minPasswordLength = 8;
-        const maxPasswordLength = 30;
-        const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        const maxPasswordLength = 50;
         e.preventDefault();
 
     const newErrors = [];
         if (name.length < minNameLength || name.length > maxNameLength) {
-            newErrors.push('Not suitable username');
+            newErrors.push('Name has to be between 2 and 30 symbols long.');
         }
 
         if (email.length < minEmailLength || email.length > maxEmailLength) {
-            newErrors.push('Not suitable email');
-        } else if (!emailRegex.test(email)) {
+            newErrors.push('Email has to be between 6 and 50 symbols long.');
+        } else if (atSymbol === -1 || dotSymbol === -1 || atSymbol > dotSymbol) {
             newErrors.push('Invalid email format');
         }
 
+        if (topLevelDomain.length < 2 || topLevelDomain.length > 4) {
+            newErrors.push('Invalid top-level domain.');
+        }
+        
+        if (!email.includes('@')) {
+            newErrors.push('Missing "@" symbol.');
+        } else if (atSymbolCount > 1) {
+            newErrors.push('Too many "@" symbols.');
+        }
+
         if (password.length < minPasswordLength || password.length > maxPasswordLength) {
-            newErrors.push('Not suitable password');
-        } else if (!passwordRegex.test(password)) {
-            newErrors.push('Password must contain at least one letter and one number');
+            newErrors.push('Password has to be between 8 and 50 symbols long.');
         }
 
         if (users.some((user) => user.email === email)) {
@@ -103,7 +113,6 @@ export function Register() {
                     ) : (
                         <AiFillEyeInvisible onClick={() => setShowPassword(true)} />
                     )}
-                    <p className={style.passwordText}>Minimum 8 symbols: letters and numbers</p>
                 </div>
                 <div>
                     <label>
