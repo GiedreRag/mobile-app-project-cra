@@ -17,12 +17,11 @@
 .burgerMenu {
     display: flex;
     position: absolute;
-    position: fixed;
     inset:3rem;
-    display: flex;
     flex-direction: column;
     background-color: #f9f9f9;
-    padding: 2rem;
+    padding: 4rem 2rem;
+    gap: 1rem;
     border: 1px solid #ccc; 
     border-radius: 1rem;
     box-shadow: 0px 2px 5px grba(0, 0, 0, 0.2);
@@ -33,16 +32,12 @@
     display: flex;
 }
 
-.burgerMenu a {
+.burgerList {
     text-decoration: none;
     color: #333;
     margin-bottom: 1rem;
 }
 
-.burgerMenu a:last-child {
-    margin-bottom: 0;
-}
-
-.burgerLink:hover {
+.burgerList:hover {
     color: #ea0e68;
 }
