@@ -4,13 +4,6 @@
     padding-top: 1rem;
 }
 
-.burger {
-    display: flex;
-    cursor: pointer;
-    margin-left: 15rem;
-    margin-top: -1.5rem;
-}
-
 .contents {
     display: flex;
     flex-direction: column;

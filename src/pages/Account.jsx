@@ -1,13 +1,10 @@
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
 import style from './Account.module.css';
-import { BurgerMenu } from '../components/BurgerMenu';
 import { AccountContent } from '../components/AccountContent';
 
 export function Account() {
     const location = useLocation();
     const user = location.state?.user || {};
-    const [burgerMenuActive, setBurgerMenuActive] = useState(false);
 
     const dataContent = [
         {
@@ -34,14 +31,12 @@ export function Account() {
 
     return (
         <>
-            <BurgerMenu active={burgerMenuActive} onClick={() => setBurgerMenuActive(!burgerMenuActive)} />
             <div className={style.account}>
                 <h2>Welcome to your account, {user.name || 'User'}!</h2>
             </div>
             <div>
             { dataContent.map(accountContentObj => <AccountContent key={accountContentObj.id} dataContent={accountContentObj}/>) }
             </div>              
-            <div className={`${style.BurgerMenu} ${burgerMenuActive ? style.active : ''}`}></div>
         </>
     );
 }
