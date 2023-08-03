@@ -9,6 +9,7 @@ import { Register } from './pages/Register';
 import { Login } from './pages/Login';
 import { Account } from './pages/Account';
 import { TermsAndConditions } from './components/TermsAndConditions';
+import { AccountLayout } from "./layout/AccountLayout";
 
 function App() {
   return (
@@ -23,8 +24,12 @@ function App() {
             <Route path='/register' element={<Register />}/>
             <Route path='/terms' element={<TermsAndConditions />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/account' element={<Account />}/>
             <Route path='/logout' element={<Login />}/>
+
+            <Route Component={AccountLayout}>
+              <Route path='/account' element={<Account />}/>
+            </Route>
+
             <Route path='*' element={<Page404 />}/>
           </Route>
         </Routes>
