@@ -1,9 +1,12 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    gap: 17.5rem;
     align-items: center;
     margin-top: -3rem;
-    user-select: none;
+    position: fixed;
+    background-color: #d7d5f5;
+    padding: 0.3rem;
+    user-select: none;;
 }
 
 .accountLogo {
@@ -16,28 +19,32 @@
 
 .burgerMenu {
     display: flex;
-    position: absolute;
-    inset:3rem;
+    position: fixed;
+    text-align: start;
+    margin-top: 2.2rem;
+    inset: 1.3rem;
     flex-direction: column;
     background-color: #f9f9f9;
-    padding: 4rem 2rem;
+    padding: 3rem;
     gap: 1rem;
     border: 1px solid #ccc; 
     border-radius: 1rem;
     box-shadow: 0px 2px 5px grba(0, 0, 0, 0.2);
     display: none;
+    user-select: none;
 }
 
 .active {
     display: flex;
+    justify-content: space-between;
 }
 
-.burgerList {
+.burgerMenu > a {
     text-decoration: none;
+    text-align: center;
     color: #333;
-    margin-bottom: 1rem;
 }
 
-.burgerList:hover {
+.burgerMenu > a:hover {
     color: #ea0e68;
 }

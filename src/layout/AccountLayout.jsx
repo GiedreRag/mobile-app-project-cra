@@ -70,9 +70,9 @@ export function AccountLayout() {
         },
         {
             type: 'link',
-            id: '30f3',
+            id: '3of3',
             title: 'Log out',
-            url: '/account',
+            url: '/logout',
         },
     ];
 
@@ -80,11 +80,11 @@ export function AccountLayout() {
         <div>
             <header className={style.header}>
                 <img className={style.accountLogo} src={logo} alt="logo" />
-                <div>
-                    <div className={style.burger} onClick={handleBurgerClick}>
-                        {burgerMenuActive ? <RxCross1 /> : <RxHamburgerMenu />}                      
+                <div className={style.allBurger}>
+                    <div onClick={handleBurgerClick} className={style.burger}>
+                        {burgerMenuActive ? <RxCross1 size='1.3rem'/> : <RxHamburgerMenu size='1.5rem' />}                      
                     </div>
-                    <div className={`${style.burgerMenu} ${burgerMenuActive ? style.active : ''}`}>
+                    <nav className={`${style.burgerMenu} ${burgerMenuActive ? style.active : ''}`}>
                         {
                             burgerList.map((link, index) => {
                                 if (link.type === 'line') {
@@ -92,7 +92,7 @@ export function AccountLayout() {
                                 }
                                 if (link.type === 'link') {
                                     return (
-                                        <Link className={style.burgerList} key={link.id} to={link.url}>
+                                        <Link key={link.id} to={link.url}>
                                             {link.title}
                                         </Link>
                                     );
@@ -101,30 +101,10 @@ export function AccountLayout() {
                                 return <>ERROR</>;
                             })
                         }
-                     </div>                    
+                     </nav>                    
                 </div>
             </header>
             <Outlet />
         </div>
     );
 }
-
-
-// return (
-//     <div>
-//         <header className={style.header}>
-//             <img className={style.accountLogo} src={logo} alt="logo" />
-//             <div>
-//                 <div className={style.burger} onClick={handleBurgerClick}>
-//                     {burgerMenuActive ? <RxCross1 /> : <RxHamburgerMenu />}                      
-//                 </div>
-//                 <div className={`${style.burgerMenu} ${burgerMenuActive ? style.active : ''}`}>
-//                     <Link className={style.burgerLink} to='/account'>Account</Link>
-//                     <Link className={style.burgerLink} to='/settings'>Settings</Link>
-//                     <Link className={style.burgerLink} to='/logout'>Logout</Link>
-//                  </div>                    
-//             </div>
-//         </header>
-//         <Outlet />
-//     </div>
-// );
